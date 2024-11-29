@@ -30,35 +30,47 @@ html {
   object-fit: cover;
   display: block;
 }
-
-/* Tabs Container */
+/* Tabs Container (Dropdown) */
 .tabs {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-  padding: 5px 10px;
-  top: 20px; /* Default top position */
-  transition: background-color 0.5s ease;
+  top: 40%;
+  left: 0;
+  z-index: 1000;
+  padding: 0;
 }
 
-/* Different transparency levels for different tabs */
-.tabs-transparency-tab1 {
-  background: rgba(0, 0, 0, 0.001); /* Light transparency */
+/* Rotate the dropdown button */
+#dropdownMenuButton {
+  transform: rotate(270deg); /* Rotate button to make it tilted */
+  transform-origin: top left; /* Ensure rotation is properly aligned */
+  background-color: #0b63ac; /* Make background transparent */
+  border: 2px solid #0b63ac; /* Set border color */
+  color: #ffffff; /* Set text color to match border */
+  width: 160px; /* Set width to ensure visibility */
 }
 
-.tabs-transparency-tab2 {
-  background: rgba(0, 0, 0, 0.001); /* Medium transparency */
+/* Keep dropdown menu normal */
+.dropdown-menu {
+  transform: rotate(0deg); /* Keep dropdown in normal orientation */
+  margin-top: 10px; /* Add some space to prevent overlap */
 }
 
-.tabs-transparency-tab3 {
-  background: rgba(0, 0, 0, 0.05); /* Dark transparency */
+/* Hover Effect */
+#dropdownMenuButton:hover {
+  background-color: #009edc; /* Optional hover effect */
+  border: 2px solid #009edc;
 }
 
-.tabs-transparency-tab4 {
-  background: rgba(0, 0, 0, 0.05); /* Dark transparency */
+/* Adjust dropdown styling to be more visible */
+.dropdown-toggle {
+  background-color: #0b63ac;
+  color: #ffffff;
+}
+
+.dropdown-toggle:hover {
+  background-color: #009edc;
+  color: #ffffff;
+  border: 2px solid #009edc;
 }
 
 /* Tab Buttons */

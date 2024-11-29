@@ -1,11 +1,44 @@
 /* global bootstrap */
 
+// Navigate menubar
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tabLinks = document.querySelectorAll(".tab-link");
+  const tabContents = document.querySelectorAll(".tab-content");
+  const tabsContainer = document.querySelector(".tabs");
+
+  // Add click event listeners to all dropdown items
+  tabLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const targetTab = link.getAttribute("data-tab");
+
+      // Remove 'active' class from all tab contents
+      tabContents.forEach((content) => content.classList.remove("active"));
+
+      // Add 'active' class to the corresponding tab content
+      const activeTabContent = document.getElementById(targetTab);
+      activeTabContent.classList.add("active");
+
+      const topPosition = activeTabContent.getAttribute("data-top-position");
+      tabsContainer.style.top = topPosition;
+
+      // Update the transparency of the tab container
+      tabsContainer.classList.remove(
+        "tabs-transparency-tab1",
+        "tabs-transparency-tab2",
+        "tabs-transparency-tab3",
+        "tabs-transparency-tab4"
+      );
+      tabsContainer.classList.add(`tabs-transparency-${targetTab}`);
+    });
+  });
+});
+
 // multi-tab webpage
 
 document.addEventListener("DOMContentLoaded", () => {
   const tabButtons = document.querySelectorAll(".tab-button");
-  const tabContents = document.querySelectorAll(".tab-content");
-  const tabsContainer = document.querySelector(".tabs");
 
   // Add click event listeners to all tab buttons
   tabButtons.forEach((button) => {
@@ -36,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Set these for each customer demo...
-  const CUSTOMER_NAME = "Webex Contact Center | Singapore";
+  const CUSTOMER_NAME = "LinkedIn | Singapore";
   const CUSTOMER_IMAGE =
-    "https://cdn.glitch.global/ac617fcb-2ab9-466a-84f5-08c5ecb0af5b/Webex%20AI%20(1).png?v=1732251295509";
+    "https://cdn.glitch.global/ccc6f436-d0dd-4b97-ad66-c6e59deb4a80/LinkenIn.png?v=1732864642087";
 
   // Set this stuff once and Fuggedaboutit...
   const WXCC_TELEPHONE_NUMBER = "+6582004000";

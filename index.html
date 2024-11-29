@@ -24,18 +24,40 @@
   </head>
 
   <body>
-    <div class="tabs">
-      <button class="tab-button active" data-tab="tab1">Home</button>
-      <button class="tab-button" data-tab="tab2">Coffee Demo</button>
-      <!-- <button class="tab-button" data-tab="tab3">AI Agent</button> -->
-      <button class="tab-button" data-tab="tab4">Video Demos</button>
+    <!-- Dropdown Menu Container -->
+    <div class="dropdown tabs">
+      <button
+        class="btn btn-secondary dropdown-toggle py-0"
+        type="button"
+        id="dropdownMenuButton"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Navigate
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li>
+          <a class="dropdown-item tab-link" data-tab="tab1" href="#">Home</a>
+        </li>
+        <li>
+          <a class="dropdown-item tab-link" data-tab="tab2" href="#"
+            >Coffee Demo</a
+          >
+        </li>
+        <!-- <li><a class="dropdown-item tab-link" data-tab="tab3" href="#">AI Agent</a></li> -->
+        <li>
+          <a class="dropdown-item tab-link" data-tab="tab4" href="#"
+            >Video Demos</a
+          >
+        </li>
+      </ul>
     </div>
 
     <!---------------------------------------------------->
     <!----------------------  Tab1  ---------------------->
     <!---------------------------------------------------->
 
-    <div class="tab-content active" id="tab1" data-top-position="30px">
+    <div class="tab-content active" id="tab1">
       <!-- Background Image placeholder -->
       <div class="wrapperImage">
         <img id="bgImage" />
@@ -787,7 +809,7 @@
     <!----------------------  Tab2  ---------------------->
     <!---------------------------------------------------->
 
-    <div class="tab-content" id="tab2" data-top-position="27px">
+    <div class="tab-content" id="tab2">
       <iframe
         src="https://orders.webexconnectsolutions.com"
         width="100%"
@@ -801,7 +823,7 @@
     <!----------------------  Tab3  ---------------------->
     <!---------------------------------------------------->
 
-    <!-- <div class="tab-content" id="tab3" data-top-position="20px">
+    <!-- <div class="tab-content" id="tab3">
       <iframe
         src="https://d3idwk7vo96ube.cloudfront.net/train"
         width="100%"
@@ -815,7 +837,7 @@
     <!----------------------  Tab4  ---------------------->
     <!---------------------------------------------------->
 
-    <div class="tab-content" id="tab4" data-top-position="13px">
+    <div class="tab-content" id="tab4">
       <iframe
         src="https://vimeo.com/showcase/10477588"
         width="100%"
